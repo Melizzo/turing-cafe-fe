@@ -2,6 +2,9 @@
 
 This application was built with `create-react-app`.
 
+## Student:
+Melissa VanKempen 
+
 ### Set Up
 
 Clone down this repo.
