@@ -12,12 +12,12 @@ class App extends Component {
 
   componentDidMount() {
     fetchReservations()
-    .then(result => console.log(result))
-    .then(result => {
+    .then(data => {
       this.setState({
-        custReservations: result.custReservations
+        custReservations: data
       })
     })
+    .catch((error) => console.error(error));
   }
 
 
