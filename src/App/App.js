@@ -1,7 +1,26 @@
 import React, { Component } from 'react';
 import './App.css';
+import { fetchReservations } from '../ApiCalls'
 
 class App extends Component {
+  constructor() {
+    super()
+      this.state = {
+        custReservations : []
+      }
+  }
+
+  componentDidMount() {
+    fetchReservations()
+    .then(result => console.log(result))
+    .then(result => {
+      this.setState({
+        custReservations: result.custReservations
+      })
+    })
+  }
+
+
   render() {
     return (
       <div className="App">
