@@ -21,7 +21,7 @@ class App extends Component {
     .catch((error) => console.error(error));
   }
 
-  removeReservations(id) {
+  removeReservation(id) {
     deleteReservation(id)
   }
 
@@ -34,7 +34,7 @@ class App extends Component {
 
         </div>
         <div className='resy-container'>
-          <Reservations custReservations={this.state.reservations} removeReservations={this.removeReservations}/>
+          <Reservations custReservations={ this.state.reservations } removeReservation={ this.removeReservation } />
         </div>
       </div>
     )

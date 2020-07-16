@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from '../Card/Card'
 
-const Reservations = ( { custReservations, removeReservations }) => {
+const Reservations = ( { custReservations, removeReservation }) => {
 
   const reservationCards = custReservations.map(appoint => {
     return(
@@ -12,7 +12,7 @@ const Reservations = ( { custReservations, removeReservations }) => {
       date = {appoint.date}
       time = {appoint.time}
       number = {appoint.number}
-      removeReservations={removeReservations}
+      removeReservation={removeReservation}
       />
     )
   })

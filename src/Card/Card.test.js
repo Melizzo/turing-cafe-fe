@@ -13,19 +13,30 @@ const mockReservationCard = {
 
 describe("Card", () => {
   it('Should render a Card correctly', () => {
+     // Setup
     const { getByText } = render( <Card {...mockReservationCard} />)
 
+    // execution
     const name = getByText("Melissa V")
     const date = getByText("12/12/12")
     const time = getByText("07:40")
     
+    // assertion
     expect(name).toBeInTheDocument()
     expect(date).toBeInTheDocument()
     expect(time).toBeInTheDocument()
   })
 
   it('should cancel a reservation', () => {
-    const mockDeleteBtn = jest.mock()
-    const { getByAltText } = render( <Card {...mockReservationCard} />)
+    // Setup
+    const mockDeleteBtn = jest.fn()
+    const { getByRole } = render( <Card {...mockReservationCard} />)
+
+    // execution
+    const cancelBtn = getByRole("button")
+    fireEvent.click(cancelBtn)
+
+    // assertion
+    expect(mockDeleteBtn).toBeCalledTimes(1)
   })
 })
