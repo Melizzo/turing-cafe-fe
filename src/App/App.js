@@ -23,6 +23,12 @@ class App extends Component {
 
   removeReservation(id) {
     deleteReservation(id)
+    .then(data => {
+      this.setState({
+        reservations: data
+      })
+    })
+    .catch((error) => console.error(error));
   }
 
   render() {
