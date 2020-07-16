@@ -15,7 +15,7 @@ class App extends Component {
     .then(result => console.log(result))
     .then(result => {
       this.setState({
-        custReservations: result
+        custReservations: result.custReservations
       })
     })
   }
